@@ -48,16 +48,15 @@ public class CreditsAdapter extends ArrayAdapter<CreditsEntry> {
 			switch(viewType) {
 				case TYPE_SECTION_TITLE:
 					view = inflater.inflate(R.layout.glass_section_title, parent, false);
-					view.setTag(null);
 					break;
 				default:
 					view = inflater.inflate(R.layout.glass_credits_item, parent, false);
-					view.setTag(entry.getUrl());
 			}
 		} else {
 			view = convertView;
 		}
 
+		view.setTag(entry.getUrl());
 		switch(viewType) {
 			case TYPE_SECTION_TITLE:
 				((TextView)view.findViewById(R.id.glass_section_title)).setText(entry.getName());
